@@ -11,9 +11,26 @@ const UserInfo = () => {
         } 
         getUser()
     }, [])
+
+    /*if (!user) return <h3>Loading..</h3> yet another option */
   return (
     <div>
-      User Info
+     <h2> User Info</h2>
+   
+               {/*} <pre>
+                    {JSON.stringify(user, null, 2)}
+  </pre> */}
+  {user ? ( // Check if user data is available
+                <div>
+                    <h3>{user.name.title}. {user.name.first} {user.name.last}</h3>
+                    <img src={user.picture.medium} alt={`user `} />
+                    <p>Email: {user.email}</p>
+                </div>
+            ) : (
+                <p>Loading user data...</p>
+            )}
+            {/*<h3>{user?.name?.title?} {user?.name?.first?} {user?.name?.last?}</h3> another option to get this to work */}
+           
     </div>
   )
 }
