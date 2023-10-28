@@ -1,10 +1,12 @@
-import { useContext, useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import { ThemeContext, ThemeProvider } from './context/ThemeContext';
+import {  ThemeProvider } from './context/ThemeContext';
+import ToggleThemeButton from './ToggleThemeButton';
 
 function App() {
   return (
     <ThemeProvider>
+      <ToggleThemeButton/>
       <h1>React API Demo</h1>
     </ThemeProvider>
   );
